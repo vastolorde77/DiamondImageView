@@ -19,7 +19,6 @@ class DiamondImageView(context: Context, attrs: AttributeSet?, defStyleAttr: Int
 ){
     companion object {
         const val DEFAULT_BORDER_WIDTH : Float = 4f
-        const val DEFAULT_SHADOW_RADIUS : Float = 8f
     }
 
     // Shape
@@ -41,6 +40,8 @@ class DiamondImageView(context: Context, attrs: AttributeSet?, defStyleAttr: Int
     constructor(context: Context) : this(context,null,0)
 
 
+    private var isBordered: Boolean = false
+
     init {
 
         val attributes = context.obtainStyledAttributes(
@@ -54,11 +55,13 @@ class DiamondImageView(context: Context, attrs: AttributeSet?, defStyleAttr: Int
         paintBorder.isAntiAlias = true
         paintBorder.style = Paint.Style.STROKE
 
-        val defaultBorderWidth = 10f * context.resources.displayMetrics.density
-        borderWidth = attributes.getDimension(R.styleable.DiamondImageView_diamond_border_width,defaultBorderWidth)
+        isBordered = attributes.getBoolean(R.styleable.DiamondImageView_diamondIV_bordered,false)
+
+        val defaultBorderWidth = DEFAULT_BORDER_WIDTH * context.resources.displayMetrics.density
+        borderWidth = attributes.getDimension(R.styleable.DiamondImageView_diamondIV_border_width,defaultBorderWidth)
         paintBorder.strokeWidth = borderWidth
 
-        borderColor = attributes.getColor(R.styleable.DiamondImageView_diamond_border_color, Color.BLACK)
+        borderColor = attributes.getColor(R.styleable.DiamondImageView_diamondIV_border_color, Color.BLACK)
         paintBorder.color = borderColor
 
         attributes.recycle()
@@ -104,14 +107,15 @@ class DiamondImageView(context: Context, attrs: AttributeSet?, defStyleAttr: Int
         path.lineTo(half,half*2)
         path.close()
         canvas.drawPath(path,paint)
-
-        val offset = paintBorder.strokeWidth / 2
-        borderPath.moveTo(offset,half)
-        borderPath.lineTo(half, offset)
-        borderPath.lineTo( half*2- offset,half)
-        borderPath.lineTo(half,-offset + half*2)
-        borderPath.close()
-        canvas.drawPath(borderPath,paintBorder)
+        if (isBordered) {
+            val offset = paintBorder.strokeWidth / 2
+            borderPath.moveTo(offset, half)
+            borderPath.lineTo(half, offset)
+            borderPath.lineTo(half * 2 - offset, half)
+            borderPath.lineTo(half, -offset + half * 2)
+            borderPath.close()
+            canvas.drawPath(borderPath, paintBorder)
+        }
     }
 
     private fun loadBitmap() {
