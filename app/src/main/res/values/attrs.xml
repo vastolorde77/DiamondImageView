@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // PieChart
+    <declare-styleable name="PieChart">
+        <attr name="showText" format="boolean" />
+        <attr name="labelPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    // LinedEditText
+    <declare-styleable name="LinedEditText">
+        <attr name="isLined" format="boolean" />
+    </declare-styleable>
+
+    // DiamondImageView
+    <declare-styleable name="DiamondImageView">
+        <attr name="diamond_border_width" format="dimension" />
+        <attr name="diamond_border_color" format="color"/>
+        <attr name="civ_background_color" format="color" />
+        <attr name="civ_shadow" format="boolean" />
+        <attr name="civ_shadow_color" format="color" />
+        <attr name="civ_shadow_radius" format="float" />
+        <attr name="civ_shadow_gravity">
+            <flag name="center" value="1" />
+            <flag name="top" value="2" />
+            <flag name="bottom" value="3"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SimpleLine">
+        <attr name="sl_color" format="color" />
+    </declare-styleable>
+</resources>
