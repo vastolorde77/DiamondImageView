@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.example.mf.robolectricexperiment">
+          xmlns:tools="http://schemas.android.com/tools" package="com.example.mf.diamondIVexample">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
@@ -16,19 +16,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme" tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
-        <service android:name=".Jobber"
-                 android:permission="android.permission.BIND_JOB_SERVICE"/>
-
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.mf.robolectricexperiment.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity
-                android:name=".LoginActivity"
-                android:label="@string/title_activity_login">
         </activity>
     </application>
 

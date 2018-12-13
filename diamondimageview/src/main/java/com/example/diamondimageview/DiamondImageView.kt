@@ -1,16 +1,12 @@
 package com.example.diamondimageview
 
-import android.animation.PropertyValuesHolder
-import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.TypedValue
-import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
-import java.lang.Exception
+import com.vastolorde77.diamondimageview.R
 
 class DiamondImageView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : AppCompatImageView(
     context,
