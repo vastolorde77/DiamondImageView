@@ -1,4 +1,4 @@
-package com.example.diamondimageview
+package com.vastolorde77.diamondimageview
 
 import android.content.Context
 import android.graphics.*

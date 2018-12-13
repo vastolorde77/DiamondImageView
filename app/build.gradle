@@ -30,5 +30,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.github.vastolorde77:DiamondImageView:0.1.2'
+    implementation project(':diamondimageview')
 }
