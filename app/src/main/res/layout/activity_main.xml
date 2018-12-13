@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:id="@+id/main_layout"
         android:layout_height="match_parent"
-        tools:context="com.example.mf.robolectricexperiment.MainActivity">
+        tools:context="com.example.mf.diamondimageview.MainActivity">
 
     <com.example.diamondimageview.DiamondImageView
             android:layout_width="200dp"

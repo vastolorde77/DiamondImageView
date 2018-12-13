@@ -1,4 +1,4 @@
-package com.example.mf.robolectricexperiment
+package com.example.mf.diamondimageview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
